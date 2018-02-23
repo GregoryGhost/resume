@@ -4,6 +4,10 @@
   "description": "Modern resume",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --progress -p",
+    "server": "webpack-dev-server --open",
+    "start": "webpack",
+    "watch": "webpack --progress --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
