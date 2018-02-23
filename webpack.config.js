@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const pug = require('./webpack/pug');
 const css = require('./webpack/css');
+const stylus = require('./webpack/stylus');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
@@ -39,7 +40,8 @@ const common = merge([{
             })
         ],
     },
-    pug()
+    pug(),
+    stylus()
 ]);
 
 module.exports = function(env) {
