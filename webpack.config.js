@@ -9,13 +9,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pug = require('pug');
 
 
-const compiledFunction = pug.compileFile(path.join(PATHS.source, 'index.pug'));
+const compiledFunction = pug.compileFile(path.join(PATHS.source, './pages/index/index.pug'));
+const compiledFunction2 = pug.compileFile(path.join(PATHS.source, './pages/blog/blog.pug'));
 
 module.exports = {
-    entry: path.join(PATHS.source, 'index.js'),
+    entry: {
+        'index': path.join(PATHS.source, 'pages/index/index.js'),
+        'blog': path.join(PATHS.source, 'pages/blog/blog.js')
+    },
     output: {
         path: PATHS.build,
-        filename: '[name].js'
+        filename: './js/[name].js'
     },
     module: {
         rules: [{
@@ -35,7 +39,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             chunks: ['index'],
-            template: path.join(PATHS.source, './index.pug')
+            template: path.join(PATHS.source, './pages/index/index.pug')
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'blog.html',
+            chunks: ['blog'],
+            template: path.join(PATHS.source, './pages/blog/blog.pug')
         })
     ]
 }
