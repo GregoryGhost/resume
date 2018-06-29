@@ -6,6 +6,8 @@ const css = require('./webpack/css');
 const stylus = require('./webpack/stylus');
 const images = require('./webpack/images');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const extractCSS = require('./webpack/css.extract');
+const uglifyJS = require('./webpack/js.uglify');
 
 const PATHS = {
     source: path.join(__dirname, 'source'),
