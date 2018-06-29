@@ -10,13 +10,14 @@ const extractCSS = require('./webpack/css.extract');
 const uglifyJS = require('./webpack/js.uglify');
 
 const PATHS = {
-    source: path.join(__dirname, 'source'),
+    source: path.join(__dirname, 'src'),
     build: path.join(__dirname, 'bin')
 };
 
 const common = merge([{
         entry: {
-            'index': path.join(PATHS.source, './pages/index/index.js')
+            'index': path.join(PATHS.source,
+                './pages/index/index.js')
         },
         output: {
             path: PATHS.build,
@@ -30,7 +31,8 @@ const common = merge([{
             new HtmlWebpackPlugin({
                 filename: 'index.html',
                 chunks: ['index', 'common'],
-                template: path.join(PATHS.source, './pages/index/index.pug')
+                template: path.join(PATHS.source, 
+                    './pages/index/index.pug')
             })
         ],
     },
