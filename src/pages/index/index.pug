@@ -1,14 +1,11 @@
 extends ../base
 
-mixin ulnums (nums)
-    - var i = 0;
-    ul
-        while i < nums
-            li= i++
+include ../../components/info-about-me/info-about-me.pug
 
 block title
     | Resume page
 block main
-    h1.test test stray228
-    div.test-dota2
-    +ulnums(3)
+    .flex-container
+        - var text = "обычный текст <strong>test strong</strong>";
+        - var title = "Profile";
+        +info-about-me(title, text)
