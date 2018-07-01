@@ -6,6 +6,7 @@ include ../../components/circle-avatar/circle-avatar.pug
 include ../../components/info-contact/info-contact.pug
 include ../../components/info-skills/info-skills.pug
 include ../../components/info-education/info-education.pug
+include ../../components/info-experience/info-experience.pug
 
 block title
     | Resume page
@@ -38,6 +39,12 @@ block main
         - var period = "//Feb 2011 - Jun 2014";
         - var univer = "University name";
         - var description = "Description of this amazing time";
-        - var education = {degree: degree, period: period, universityName: univer, description: description};
+        - var education = {label: degree, period: period, position: univer, description: description};
         - var educations = [education, education, education, education];
         +info-education("Education", educations)
+
+        - var company = "Company name";
+        - var job = "Your job here";
+        - var exp = {label: company, period: period, position: job, description: description};
+        - var exps = [exp, exp, exp, exp]
+        +info-experience("Experience", exps)
