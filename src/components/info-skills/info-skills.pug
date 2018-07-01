@@ -1,9 +1,9 @@
-include ../circle-progress-bar/circle-progress-bar.pug
+include ../progress-bar/progress-bar.pug
 include ../info/info.pug
 
 mixin info-skills(title, skills, maxSkillPoint)
     mixin skills(data)
         .info-skills
             each skill, label in data
-                +circle-progress-bar(label, skill, maxSkillPoint)
+                +progress-bar(label, skill, maxSkillPoint)
     +info(title, 'skills', skills)
