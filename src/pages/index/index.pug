@@ -7,6 +7,7 @@ include ../../components/info-contact/info-contact.pug
 include ../../components/info-skills/info-skills.pug
 include ../../components/info-education/info-education.pug
 include ../../components/info-experience/info-experience.pug
+include ../../components/info-software/info-software.pug
 
 block title
     | Resume page
@@ -48,3 +49,13 @@ block main
         - var exp = {label: company, period: period, position: job, description: description};
         - var exps = [exp, exp, exp, exp]
         +info-experience("Experience", exps)
+
+        - var maxPoint = 100;
+        - var photoshop = 80;
+        - var illustrator = 60;
+        - var indesign = 50;
+        - var dreamweaver = 40;
+        - var afterEffects = 30;
+        - var web = 100;
+        - var softs = {'Photoshop': photoshop, 'Illustrator': illustrator, 'Indesign': indesign, 'Dreamweaver': dreamweaver, 'After effects': afterEffects, 'Html&CSS3': web};
+        +info-software("Software", softs, maxPoint)
