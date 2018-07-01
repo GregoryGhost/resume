@@ -2,7 +2,7 @@
 
 Верстка макета резюме с использованием Webpack, а также шаблонизатора Pug и препроцессора Stylus.
 
-[Пример страницы.](bin/index.html)
+[Пример страницы.](https://gregoryghost.github.io/resume/bin/index.html)
 
 ## Сборка проекта
 
