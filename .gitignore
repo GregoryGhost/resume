@@ -76,10 +76,6 @@ typings/
 # dotenv environment variables file
 .env
 
-
-### Stylus ###
-*.css
-
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
