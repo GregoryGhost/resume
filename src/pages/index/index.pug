@@ -3,6 +3,7 @@ extends ../base
 include ../../components/info-about-me/info-about-me.pug
 include ../../components/info-header/info-header.pug
 include ../../components/circle-avatar/circle-avatar.pug
+include ../../components/info-contact/info-contact.pug
 
 block title
     | Resume page
@@ -14,5 +15,11 @@ block main
         +info-header('circle-avatar', name, surname, spec)
 
         - var text = "обычный текст <strong>test strong</strong>";
-        - var title = "Profile";
-        +info-about-me(title, text)
+        +info-about-me("Profile", text)
+
+        - var adress = "Main Street, City.";
+        - var email = "contact@domain.com";
+        - var phone = "555-555-555";
+        - var website = "www.yourweb.com";
+        - var contacts = {'Adress': adress, 'E-mail': email, 'Phone': phone, 'Website': website};
+        +info-contacts("Contact", contacts)
