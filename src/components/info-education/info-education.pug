@@ -1,0 +1,8 @@
+include ../education/education.pug
+
+mixin info-education(title, educations)
+    mixin edu(data)
+        .info-education
+            each edu in data
+                +education(edu)
+    +info(title, 'edu', educations)

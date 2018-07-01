@@ -1,0 +1,9 @@
+include ../info/info.pug
+include ../contact/contact.pug
+
+mixin info-contacts(title, contacts)
+    mixin contacts(data)
+        .info-contacts
+            each contact, label in data
+                +contact(label, contact)
+    +info(title, 'contacts', contacts)

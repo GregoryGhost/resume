@@ -1,0 +1,8 @@
+include ../education/education.pug
+
+mixin info-experience(title, exps)
+    mixin experience(data)
+        .info-experience
+            each exp in data
+                +education(exp)
+    +info(title, 'experience', exps)
