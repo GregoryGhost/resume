@@ -1,11 +1,18 @@
 extends ../base
 
 include ../../components/info-about-me/info-about-me.pug
+include ../../components/info-header/info-header.pug
+include ../../components/circle-avatar/circle-avatar.pug
 
 block title
     | Resume page
 block main
     .flex-container
+        - var name = "name here";
+        - var surname = "surname";
+        - var spec = "graphic designer";
+        +info-header('circle-avatar', name, surname, spec)
+
         - var text = "обычный текст <strong>test strong</strong>";
         - var title = "Profile";
         +info-about-me(title, text)
