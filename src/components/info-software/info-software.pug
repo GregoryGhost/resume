@@ -1,0 +1,9 @@
+include ../info/info.pug
+include ../progress-bar/progress-bar.pug
+
+mixin info-software(title, softs, maxPoint)
+    mixin software(softs)
+        .info-software
+            each softPoint, label in softs
+                +progress-bar(label, softPoint, maxPoint)
+    +info(title, 'software', softs)

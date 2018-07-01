@@ -1,0 +1,10 @@
+mixin info-header(avatarDrawer, name, surname, specialization)
+    .info-header
+        .info-header__avatar 
+            +#{avatarDrawer}()
+        .info-header__name
+            | #{name}
+        .info-header__surname
+            | #{surname}
+        .info-header__specialization
+            | #{specialization}

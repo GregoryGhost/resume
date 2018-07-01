@@ -6,16 +6,18 @@ const css = require('./webpack/css');
 const stylus = require('./webpack/stylus');
 const images = require('./webpack/images');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const extractCSS = require('./webpack/css.extract');
+const uglifyJS = require('./webpack/js.uglify');
 
 const PATHS = {
-    source: path.join(__dirname, 'source'),
+    source: path.join(__dirname, 'src'),
     build: path.join(__dirname, 'bin')
 };
 
 const common = merge([{
         entry: {
-            'index': path.join(PATHS.source, 'pages/index/index.js'),
-            'blog': path.join(PATHS.source, 'pages/blog/blog.js')
+            'index': path.join(PATHS.source,
+                './pages/index/index.js')
         },
         output: {
             path: PATHS.build,
@@ -29,15 +31,8 @@ const common = merge([{
             new HtmlWebpackPlugin({
                 filename: 'index.html',
                 chunks: ['index', 'common'],
-                template: path.join(PATHS.source, './pages/index/index.pug')
-            }),
-            new HtmlWebpackPlugin({
-                filename: 'blog.html',
-                chunks: ['blog', 'common'],
-                template: path.join(PATHS.source, './pages/blog/blog.pug')
-            }),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'common'
+                template: path.join(PATHS.source, 
+                    './pages/index/index.pug')
             })
         ],
     },
