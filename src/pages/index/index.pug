@@ -5,6 +5,7 @@ include ../../components/info-header/info-header.pug
 include ../../components/circle-avatar/circle-avatar.pug
 include ../../components/info-contact/info-contact.pug
 include ../../components/info-skills/info-skills.pug
+include ../../components/info-education/info-education.pug
 
 block title
     | Resume page
@@ -32,3 +33,11 @@ block main
         - var communication = 11;
         - var skills = {'Creative': creative, 'Teamwork': teamwork, 'Innovate': innovate, 'Communication': communication};
         +info-skills("Skills", skills, maxSkillPoint)
+
+        - var degree = "Master degree";
+        - var period = "//Feb 2011 - Jun 2014";
+        - var univer = "University name";
+        - var description = "Description of this amazing time";
+        - var education = {degree: degree, period: period, universityName: univer, description: description};
+        - var educations = [education, education, education, education];
+        +info-education("Education", educations)
