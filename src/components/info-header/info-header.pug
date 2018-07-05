@@ -1,7 +1,9 @@
-mixin info-header(avatarDrawer, name, surname, specialization)
+include ../avatar/avatar.pug
+
+mixin info-header(name, surname, specialization)
     .info-header
         .info-header__avatar 
-            +#{avatarDrawer}()
+            +avatar({})
         .info-header__name
             | #{name}
         .info-header__surname

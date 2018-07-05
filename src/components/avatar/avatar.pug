@@ -1,0 +1,6 @@
+mixin avatar({img = '', alt=''})
+    .avatar
+        .avatar__background
+            if img
+                - var pathImg = `./images/${img}`
+                img.avatar__img(src=require(pathImg), alt=alt)
