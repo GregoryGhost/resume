@@ -1,0 +1,8 @@
+include ../avatar/avatar.pug
+
+mixin title({img, alt, label})
+    .title
+        +avatar({
+            img: img, alt: alt
+        })
+        h2.title__label #{label}
