@@ -1,0 +1,9 @@
+mixin dot-progress-bar({title, range, count})
+    .dot-progress-bar
+        .dot-progress-bar__title #{title}
+        .dot-progress-bar__progress
+            - for(let i = 0; i < count; i++)
+                if i < range
+                    .dot-progress-bar__dot.dot-progress-bar__dot_filled
+                else
+                    .dot-progress-bar__dot
