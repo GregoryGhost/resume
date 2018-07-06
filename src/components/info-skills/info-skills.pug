@@ -1,9 +1,13 @@
-include ../progress-bar/progress-bar.pug
+include ../dot-progress-bar/dot-progress-bar.pug
 include ../info/info.pug
 
 mixin info-skills(title, skills, maxSkillPoint)
     mixin skills(data)
         .info-skills
-            each skill, label in data
-                +progress-bar(label, skill, maxSkillPoint)
-    +info(title, 'skills', skills)
+            each skillPoint, label in data
+                +dot-progress-bar({title: label, range: skillPoint, count: maxSkillPoint})
+    - var content = 'skills';
+    - var img = 'dota2-logo.png';
+    - var alt = 'dota2';
+    - var records = skills;
+    +info({img: img, alt: alt, title: title, contentFunc: content, data: records})
