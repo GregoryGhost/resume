@@ -3,6 +3,10 @@ include ../title/title.pug
 mixin info({img, alt, title, contentFunc, data})
     .info
         .info__title
-            +title({img: img, alt: alt, label: title})
+            +title({
+                img: img,
+                alt: alt, 
+                label: title
+            })
         .info__content
             +#{contentFunc}(data)

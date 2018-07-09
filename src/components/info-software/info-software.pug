@@ -1,12 +1,19 @@
 include ../info/info.pug
 include ../progress-bar/progress-bar.pug
 
-mixin info-software(title, softs, maxPoint)
+mixin info-software(title, softs, maxPoint = 100)
     mixin software(softs)
         .info-software
             each softPoint, label in softs
                 +progress-bar(label, softPoint, maxPoint)
-    - var content = 'software';
-    - var icon = 'dota2-logo.png';
-    - var alt = 'dota2';
-    +info({img: icon, alt: alt, title: title, contentFunc: content, data: softs})
+    - 
+        var content = 'software';
+        var icon = 'software.png';
+        var alt = 'my softwares';
+    +info({
+        img: icon, 
+        alt: alt, 
+        title: title, 
+        contentFunc: content, 
+        data: softs
+    })

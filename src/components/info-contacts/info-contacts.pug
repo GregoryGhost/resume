@@ -5,5 +5,16 @@ mixin info-contacts(title, contacts)
     mixin contacts(data)
         .info-contacts
             each contact, label in data
-                +contact(label, contact)
-    +info(title, 'contacts', contacts)
+                .info-contacts__contact
+                    +contact(label, contact)
+    - 
+        var content = 'contacts';
+        var icon = 'contact.png';
+        var alt = 'my contact';
+    +info({
+        img: icon,
+        alt: alt,
+        title: title, 
+        contentFunc: content, 
+        data: contacts
+    })

@@ -4,5 +4,16 @@ mixin info-experience(title, exps)
     mixin experience(data)
         .info-experience
             each exp in data
-                +education(exp)
-    +info(title, 'experience', exps)
+                .info-experience__experience
+                    +education(exp)
+    - 
+        var content = 'experience';
+        var icon = 'experience.png';
+        var alt = 'my exps';
+    +info({
+        img: icon, 
+        alt: alt, 
+        title: title, 
+        contentFunc: content, 
+        data: exps
+    })
