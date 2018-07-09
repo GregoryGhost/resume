@@ -1,8 +1,0 @@
-include ../info/info.pug
-
-mixin info-about-me(title, text)
-    mixin content-about-me(text)
-        .info-about-me !{text}
-    - var icon = 'dota2-logo.png';
-    - var alt = 'dota2';
-    +info({img: icon, alt: alt, title: title, contentFunc: 'content-about-me', data: text})

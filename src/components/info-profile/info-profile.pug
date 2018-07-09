@@ -1,0 +1,8 @@
+include ../info/info.pug
+
+mixin info-profile(title, text)
+    mixin profile(text)
+        .info-profile !{text}
+    - var icon = 'dota2-logo.png';
+    - var alt = 'dota2';
+    +info({img: icon, alt: alt, title: title, contentFunc: 'profile', data: text})
