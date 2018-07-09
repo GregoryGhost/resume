@@ -1,0 +1,96 @@
+include ../info-profile/info-profile.pug
+include ../info-header/info-header.pug
+include ../info-contacts/info-contacts.pug
+include ../info-skills/info-skills.pug
+include ../info-education/info-education.pug
+include ../info-experience/info-experience.pug
+include ../info-software/info-software.pug
+
+mixin resume()
+    .flex-container
+        - 
+            var name = "name here";
+            var surname = "surname";
+            var spec = "graphic designer";
+        +info-header({
+            avatar: '',
+            alt: '',
+            name: name,
+            surname: surname, 
+            specialization: spec
+        })
+
+        - 
+            var normalText = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu ";
+            var strongText = "<strong>pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</strong>";
+            var text = normalText + strongText;
+        +info-profile("Profile", text)
+
+        - 
+            var adress = "Main Street, City.";
+            var email = "contact@domain.com";
+            var phone = "555-555-555";
+            var website = "www.yourweb.com";
+            var contacts = {
+                'Adress': adress,
+                'E-mail': email, 
+                'Phone': phone, 
+                'Website': website
+            };
+        +info-contacts("Contact", contacts)
+
+        - 
+            var creative = 9;
+            var teamwork = 11;
+            var innovate = 6;
+            var communication = 11;
+            var skills = {
+                'Creative': creative, 
+                'Teamwork': teamwork, 
+                'Innovate': innovate, 
+                'Communication': communication
+            };
+        +info-skills("Skills", skills)
+
+        - 
+            var degree = "Master degree";
+            var period = "//Feb 2011 - Jun 2014";
+            var univer = "University name";
+            var description = "Description of this amazing time";
+            var education = {
+                label: degree, 
+                period: period, 
+                position: univer, 
+                description: description
+            };
+            var educations = [education, education, education, education];
+        +info-education("Education", educations)
+
+        - 
+            var company = "Company name";
+            var job = "Your job here";
+            var exp = {
+                label: company, 
+                period: period, 
+                position: job, 
+                description: description
+            };
+            var exps = [exp, exp, exp, exp]
+        +info-experience("Experience", exps)
+
+        - 
+            var photoshop = 80;
+            var illustrator = 60;
+            var indesign = 50;
+            var dreamweaver = 40;
+            var afterEffects = 30;
+            var web = 100;
+            var softs = {
+                'Photoshop': photoshop, 
+                'Illustrator': illustrator, 
+                'Indesign': indesign, 
+                'Dreamweaver': dreamweaver, 
+                'After effects': afterEffects, 
+                'Html&CSS3': web
+            };
+        +info-software("Software", softs)
