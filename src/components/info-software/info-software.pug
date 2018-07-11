@@ -5,7 +5,8 @@ mixin info-software(title, softs, maxPoint = 100)
     mixin software(softs)
         .info-software
             each softPoint, label in softs
-                +progress-bar(label, softPoint, maxPoint)
+                .info-software__soft
+                    +progress-bar(label, softPoint, maxPoint)
     - 
         var content = 'software';
         var icon = 'software.png';
