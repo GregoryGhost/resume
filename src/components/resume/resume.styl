@@ -1,7 +1,21 @@
 .container
     display: flex
-    flex-direction: column
     flex-wrap: wrap
     justify-content: space-between
-    height: 100px
-    width: 400px
+    width: 90%
+    margin: 0 auto
+    padding: 4.75rem 3% 4.75rem 3.16%
+    
+    &__column-left
+        width: 40%
+            
+    &__column-right
+        width: 60%
+
+    @media (max-width: 990px)
+        &__column-left, &__column-right
+            width: 100%
+        &
+            width: 80%
+            padding-top: 2.3rem
+            padding-bottom: 2.3rem
