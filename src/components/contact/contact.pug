@@ -1,4 +1,18 @@
-mixin contact(label, contactInfo)
-    .contact
-        .contact__label #{label}
-        .contact__info #{contactInfo}
+mixin contact({type = 'text', title, text})
+    mixin rowContact(label, text)
+        .contact__label=label
+        .contact__info=text
+        
+    case type
+        when 'email'
+          a.contact(href=`mailto: ${text}`)
+            +rowContact(title, text)
+        when 'phone'
+          a.contact(href=`tel:${text}`)
+            +rowContact(title, text)
+        when 'link'
+          a.contact(href=`https://${text}` target="_blank" rel="noopener noreferrer")
+            +rowContact(title, text)
+        default
+          .contact
+            +rowContact(title, text)
