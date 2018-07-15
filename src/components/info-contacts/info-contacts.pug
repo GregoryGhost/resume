@@ -4,9 +4,9 @@ include ../contact/contact.pug
 mixin info-contacts(title, contacts)
     mixin contacts(data)
         .info-contacts
-            each contact, label in data
+            each contactItem in data
                 .info-contacts__contact
-                    +contact(label, contact)
+                    +contact(contactItem)
     - 
         var content = 'contacts';
         var icon = 'contact.png';
