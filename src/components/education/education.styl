@@ -1,0 +1,40 @@
+.education
+
+    &__title
+        display: flex
+        flex-wrap: wrap
+
+    &__content
+        display: flex
+        flex-direction: column
+        align-items: left
+    
+    &__label
+        color: red
+        font-weight: bold
+
+    &__period
+        margin-left: 1rem
+
+        &::before
+            content: "// "
+
+    &__label, &__position
+        text-transform: uppercase
+        font-size: 2rem
+
+    &__label, &__period, &__position
+        font-size: 2rem
+
+    &__description
+        font-size: 1rem
+
+    @media (max-width: 360px)
+        &
+            justify-content: space-between
+            
+        &__period
+            margin-left: 0
+            
+            &::before
+                display: none

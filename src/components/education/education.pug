@@ -1,6 +1,8 @@
-mixin education(education)
+mixin education({education={}, labelColor='red'})
         .education
-            .education__label #{education.label}
-            .education__period #{education.period}
-            .education__position #{education.position}
-            .education__description #{education.description}
+            .education__title
+                .education__label(style=`color: ${labelColor}`) #{education.label}
+                .education__period #{education.period}
+            .education__content
+                .education__position #{education.position}
+                .education__description #{education.description}
