@@ -1,11 +1,25 @@
 include ../education/education.pug
+include ../marked-list/marked-list.pug
 
 mixin info-experience(title, exps)
     mixin experience(data)
+        -
+            var items = [];
+            var contentFunc = 'education';
+        each text in data
+            -
+                var content = {
+                    education: text,
+                    labelColor: 'blue'
+                };
+                var item = {
+                        contentFunc: contentFunc,
+                        data: content
+                };
+            - items.push(item);
         .info-experience
-            each exp in data
-                .info-experience__experience
-                    +education(exp)
+            .info-experience__experience
+                +marked-list(items)
     - 
         var content = 'experience';
         var icon = 'experience.png';
