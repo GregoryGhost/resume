@@ -11,7 +11,31 @@
         margin-bottom: 0.1rem
         background-color: $colorBlue
 
-    &__label
+        @media (max-width: 380px)
+            display: none
+    
+    &__avatar
+        width: 4.7rem
+        height: 4.7rem
+        flex-shrink: 0
+        
+        @media (max-width: 380px)
+            width: 3.75rem
+            height: 3.75rem
+            
+    &__label, h2
         text-transform: uppercase
         padding: 0.3rem
         color: $colorBlue
+        font-family: MariadPro, Arial, sans-serif
+        font-weight: bold
+        font-size: 2.56rem
+        max-width: 90%
+        margin-left: 0.5rem
+        margin-right: 0.5rem
+        overflow: hidden
+        word-wrap: break-word
+        
+        @media (max-width: 380px)
+            font-size: 2.25rem
+        
