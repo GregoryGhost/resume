@@ -3,7 +3,7 @@ include ../avatar/avatar.pug
 mixin info-header({avatar = '', alt = '', name, surname, specialization})
     .info-header
         .info-header__avatar 
-            +avatar({img: avatar, alt: alt})
+            +avatar({img: avatar, alt: alt, icon: false})
         .info-header__name
             | #{name}
         .info-header__surname
