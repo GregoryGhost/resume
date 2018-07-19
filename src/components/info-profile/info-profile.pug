@@ -2,7 +2,8 @@ include ../info/info.pug
 
 mixin info-profile(title, text)
     mixin profile(text)
-        .info-profile !{text}
+        .info-profile
+            .info-profile__text !{text}
     - 
         var content = 'profile';
         var icon = 'profile.png';
