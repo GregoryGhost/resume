@@ -1,0 +1,108 @@
+include ../info-profile/info-profile.pug
+include ../info-header/info-header.pug
+include ../info-contacts/info-contacts.pug
+include ../info-skills/info-skills.pug
+include ../info-education/info-education.pug
+include ../info-experience/info-experience.pug
+include ../info-software/info-software.pug
+include ../marked-list/marked-list.pug
+
+mixin resume()
+    .container
+        .container__column-left
+            .container__row
+                - 
+                    var name = "name here";
+                    var surname = "surname";
+                    var spec = "graphic designer";
+                    var ava = 'ava.jpg';
+                    var alt = 'avatar';
+                +info-header({
+                    avatar: ava,
+                    alt: alt,
+                    name: name,
+                    surname: surname, 
+                    specialization: spec
+                })
+
+            .container__row
+                - 
+                    var normalText = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu ";
+                    var strongText = "<strong>pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</strong>";
+                    var text = normalText + strongText;
+                +info-profile("Profile", text)
+
+            .container__row
+                - 
+                    var address = "Main Street, City.";
+                    var email = "contact@domain.com";
+                    var phone = "555-555-555";
+                    var website = "www.yourweb.com";
+                    var contacts = [
+                        {title: 'Address', text: address},
+                        {title: 'E-mail',  text: email, type: 'email'},
+                        {title: 'Phone',   text: phone, type: 'phone'}, 
+                        {title: 'Website', text: website, type: 'link'}
+                    ];
+                +info-contacts("Contact", contacts)
+
+            .container__row
+                - 
+                    var creative = 9;
+                    var teamwork = 11;
+                    var innovate = 6;
+                    var communication = 11;
+                    var skills = {
+                        'Creative': creative, 
+                        'Teamwork': teamwork, 
+                        'Innovate': innovate, 
+                        'Communication': communication
+                    };
+                +info-skills("Skills", skills)
+                
+        .container__column-right
+            .container__row
+                - 
+                    var degree = "Master degree";
+                    var period = "Feb 2011 - Jun 2014";
+                    var univer = "University name";
+                    var description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.";
+                    var education = {
+                        label: degree, 
+                        period: period, 
+                        position: univer, 
+                        description: description
+                    };
+                    var educations = [education, education, education, education];
+                +info-education("Education", educations)
+
+            .container__row
+                - 
+                    var company = "Company name";
+                    var job = "Your job here";
+                    var exp = {
+                        label: company, 
+                        period: period, 
+                        position: job, 
+                        description: description
+                    };
+                    var exps = [exp, exp, exp]
+                +info-experience("Experience", exps)
+
+            .container__row
+                - 
+                    var photoshop = 90;
+                    var illustrator = 85;
+                    var indesign = 70;
+                    var dreamweaver = 60;
+                    var afterEffects = 50;
+                    var web = 90;
+                    var softs = {
+                        'Photoshop': photoshop,
+                        'Dreamweaver': dreamweaver, 
+                        'Illustrator': illustrator,
+                        'After effects': afterEffects, 
+                        'Indesign': indesign, 
+                        'Html&CSS3': web
+                    };
+                +info-software("Software", softs)

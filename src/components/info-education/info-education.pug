@@ -1,8 +1,30 @@
 include ../education/education.pug
+include ../marked-list/marked-list.pug
 
 mixin info-education(title, educations)
     mixin edu(data)
+        -
+            var items = [];
+            var contentFunc = 'education';
+        each text in data
+            -
+                var content = {education: text};
+                var item = {
+                        contentFunc: contentFunc,
+                        data: content
+                };
+            - items.push(item);
         .info-education
-            each edu in data
-                +education(edu)
-    +info(title, 'edu', educations)
+            .info-education__education
+                +marked-list(items)
+    - 
+        var content = 'edu';
+        var icon = 'education.png';
+        var alt = 'my education';
+    +info({
+        img: icon, 
+        alt: alt, 
+        title: title, 
+        contentFunc: content, 
+        data: educations
+    })

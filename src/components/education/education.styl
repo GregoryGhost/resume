@@ -1,0 +1,44 @@
+@import "../../global/colors.styl"
+
+.education
+
+    &__title
+        display: flex
+        flex-wrap: wrap
+
+    &__content
+        display: flex
+        flex-direction: column
+        align-items: left
+    
+    &__label
+        color: $colorBlue
+        font-weight: bold
+
+    &__period
+        margin-left: 1rem
+
+        &::before
+            content: "// "
+
+    &__label, &__position
+        text-transform: uppercase
+
+    &__label, &__period, &__position
+        font-size: 1.56rem
+
+    &__description
+        font-size: 1rem
+
+    @media (max-width: 360px)
+        &
+            justify-content: space-between
+            
+        &__period
+            margin-left: 0
+            
+            &::before
+                display: none
+
+        &__label, &__period, &__position
+            font-size: 1.56rem

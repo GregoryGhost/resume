@@ -1,0 +1,9 @@
+mixin avatar({img = '', alt='', icon=true})
+    .avatar
+        .avatar__background
+            if img
+                - var pathImg = require(`./img/${img}`);
+                if icon
+                    img.avatar__img(src=pathImg, alt=alt)
+                else
+                    img.avatar__img(style=`width: 100%`, src=pathImg, alt=alt)
