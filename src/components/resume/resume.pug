@@ -5,6 +5,7 @@ include ../info-skills/info-skills.pug
 include ../info-education/info-education.pug
 include ../info-experience/info-experience.pug
 include ../info-software/info-software.pug
+include ../marked-list/marked-list.pug
 
 mixin resume()
     .container
@@ -33,16 +34,16 @@ mixin resume()
 
             .container__row
                 - 
-                    var adress = "Main Street, City.";
+                    var address = "Main Street, City.";
                     var email = "contact@domain.com";
                     var phone = "555-555-555";
                     var website = "www.yourweb.com";
-                    var contacts = {
-                        'Adress': adress,
-                        'E-mail': email, 
-                        'Phone': phone, 
-                        'Website': website
-                    };
+                    var contacts = [
+                        {title: 'Address', text: address},
+                        {title: 'E-mail',  text: email, type: 'email'},
+                        {title: 'Phone',   text: phone, type: 'phone'}, 
+                        {title: 'Website', text: website, type: 'link'}
+                    ];
                 +info-contacts("Contact", contacts)
 
             .container__row
@@ -63,9 +64,9 @@ mixin resume()
             .container__row
                 - 
                     var degree = "Master degree";
-                    var period = "//Feb 2011 - Jun 2014";
+                    var period = "Feb 2011 - Jun 2014";
                     var univer = "University name";
-                    var description = "Description of this amazing time";
+                    var description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.";
                     var education = {
                         label: degree, 
                         period: period, 
@@ -85,7 +86,7 @@ mixin resume()
                         position: job, 
                         description: description
                     };
-                    var exps = [exp, exp, exp, exp]
+                    var exps = [exp, exp, exp]
                 +info-experience("Experience", exps)
 
             .container__row
@@ -97,11 +98,11 @@ mixin resume()
                     var afterEffects = 50;
                     var web = 90;
                     var softs = {
-                        'Photoshop': photoshop, 
-                        'Illustrator': illustrator, 
-                        'Indesign': indesign, 
+                        'Photoshop': photoshop,
                         'Dreamweaver': dreamweaver, 
+                        'Illustrator': illustrator,
                         'After effects': afterEffects, 
+                        'Indesign': indesign, 
                         'Html&CSS3': web
                     };
                 +info-software("Software", softs)
