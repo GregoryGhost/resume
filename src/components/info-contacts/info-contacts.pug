@@ -1,0 +1,20 @@
+include ../info/info.pug
+include ../contact/contact.pug
+
+mixin info-contacts(title, contacts)
+    mixin contacts(data)
+        .info-contacts
+            each contactItem in data
+                .info-contacts__contact
+                    +contact(contactItem)
+    - 
+        var content = 'contacts';
+        var icon = 'contact.png';
+        var alt = 'my contact';
+    +info({
+        img: icon,
+        alt: alt,
+        title: title, 
+        contentFunc: content, 
+        data: contacts
+    })

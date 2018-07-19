@@ -1,0 +1,23 @@
+@import "../../global/colors.styl"
+
+.contact
+    display: flex
+    text-decoration: none
+
+    &__label, &__info
+        font-size: 1.56rem
+        
+    &__label
+        text-transform: uppercase
+        color: $colorBlue
+        font-weight: bold
+        flex: 1
+
+    &__info
+        text-align: left
+        color: black
+        flex: 2
+
+    @media (max-width: 380px)
+        flex-direction: column
+        align-items: center

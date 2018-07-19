@@ -1,6 +1,12 @@
-mixin education(education)
-        .education
-            .education__label #{education.label}
+mixin education({education={}, labelColor=''})
+    .education
+        .education__title
+            if labelColor
+                .education__label(style=`color: ${labelColor}`) #{education.label}
+            else
+                .education__label #{education.label}
+            
             .education__period #{education.period}
+        .education__content
             .education__position #{education.position}
             .education__description #{education.description}

@@ -1,0 +1,17 @@
+include ../info/info.pug
+
+mixin info-profile(title, text)
+    mixin profile(text)
+        .info-profile
+            .info-profile__text !{text}
+    - 
+        var content = 'profile';
+        var icon = 'profile.png';
+        var alt = 'about me';
+    +info({
+        img: icon, 
+        alt: alt, 
+        title: title, 
+        contentFunc: content, 
+        data: text
+    })
